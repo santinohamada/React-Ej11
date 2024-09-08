@@ -1,15 +1,20 @@
 import { useState } from 'react'
-import reactLogo from './assets/react.svg'
-import viteLogo from '/vite.svg'
 import './App.css'
-
+import ListaNoticia from './components/ListaNoticia';
+import Formulario from './components/Formulario';
+import 'bootstrap/dist/css/bootstrap.min.css';
+import Titulo from './components/Titulo';
 function App() {
-  const [count, setCount] = useState(0)
-
+ const [categoria, setCategoria ] = useState('')
   return (
-    <>
-     
-    </>
+    <section className='container'>
+      <div className='my-3'>
+        <Titulo></Titulo>
+      </div>
+     <Formulario setCategoria={setCategoria} ></Formulario>
+   
+     <ListaNoticia categoria={categoria}></ListaNoticia>
+    </section>
   )
 }
 
